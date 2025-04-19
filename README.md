@@ -64,8 +64,9 @@ Make sure you have Docker and Docker Compose installed on your system.
 
 Run the following commands to stop any previously running containers, build the Docker images, and start the containers:
 
-````bash
+```bash
 python restart.py  # This will stop old containers, build new ones, and pull models
+```
 
 ### 3. Install Python Dependencies
 
@@ -73,6 +74,7 @@ Inside the `python-app` container, the required Python libraries are already lis
 
 ```bash
 docker-compose run python-app pip install -r requirements.txt
+```
 
 ### 4. Start the Chat
 
@@ -80,6 +82,7 @@ Once the containers are running, open a terminal and run the Python application:
 
 ```bash
 docker-compose run python-app
+```
 
 ### 5. Interact with the Chatbot
 
@@ -96,7 +99,7 @@ Chat with Gemma! Type 'exit' to quit.
 
 You: Hello!
 Gemma: Hi there! How can I assist you today?
-
+```
 
 ## Contributing
 
@@ -107,4 +110,3 @@ We welcome contributions! If you would like to contribute to the project, please
 3. Commit your changes (`git commit -am 'Add new feature'`)
 4. Push to the branch (`git push origin feature-name`)
 5. Create a new Pull Request
-````
