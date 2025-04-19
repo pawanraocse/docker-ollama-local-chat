@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  ollama:
+    image: local-llm-ollama:latest # Use your Ollama Docker image
+    container_name: ollama
+    ports:
+      - "11434:11434" # Expose the Ollama port
+    restart: unless-stopped
+
+  python-app:
+    build: .
+    container_name: python-chat
+    depends_on:
+      - ollama # Ensure Ollama starts before the Python app
+    environment:
+      - OLLAMA_HOST=ollama # Use container name for the Ollama server
+    stdin_open: true # Keep STDIN open for interactive prompts
+    tty: true # Keep the terminal open for user input
